@@ -1,1 +1,9 @@
-src/libclank/config.hh.in linguist-language=C++
+*.hh.in linguist-language=C++
+*.cc.in linguist-language=C++
+*.cc linguist-language=C++
+*.hh linguist-language=C++
+
+meson.build linguist-language=Meson
+meson_options.txt linguist-language=Meson
+
+deps/* linguist-vendored
