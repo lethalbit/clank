@@ -99,6 +99,10 @@ There is also the possibility of adding support for [D lang](https://github.com/
 	</tbody>
 </table>
 
+## Examples
+
+A collection of examples will be put in the [examples](./examples/) directory to show how to use Clank to consume C++ code once it is at a point where that is possible.
+
 ## Configuring and Building
 
 The following steps describe how to build Clank, it should be consistent for Linux, macOS, and Windows, but macOS and Windows remain untested.
