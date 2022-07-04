@@ -42,7 +42,7 @@ napoleon_custom_sections  = ["Platform overrides"]
 
 
 
-html_baseurl     = ''
+html_baseurl     = 'https://lethalbit.github.io/clank/'
 html_theme       = 'sphinx_rtd_theme'
 html_copy_source = False
 
