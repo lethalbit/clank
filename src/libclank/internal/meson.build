@@ -2,6 +2,7 @@
 
 library_hdrs_internal = files([
 	'defs.hh',
+	'utility.hh',
 ])
 
 library_srcs += files([
