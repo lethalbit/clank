@@ -3,6 +3,7 @@
 library_hdrs_internal = files([
 	'defs.hh',
 	'enum.hh',
+	'unicode_range.hh',
 	'utility.hh',
 ])
 
