@@ -101,6 +101,8 @@ The [clang](https://clang.llvm.org/) front-end can parse many languages, but cla
 
 The following steps describe how to build Clank, it should be consistent for Linux, macOS, and Windows, but macOS and Windows remain untested.
 
+**NOTE:** The minimum C++ standard to build Clank is C++17.
+
 ### Prerequisites
 
 To build Clank, ensure you have the following build time dependencies:
