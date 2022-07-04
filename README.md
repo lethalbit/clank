@@ -4,6 +4,99 @@ Clank is a fully stand-alone C++ front-end based on [LLVM](https://llvm.org/)'s 
 
 It has been heavily modified and de-coupled from LLVM to be a stand alone library with only the C++ standard libraries as dependencies.
 
+
+## Planned Support
+
+The [clang](https://clang.llvm.org/) front-end can parse many languages, but clank is mainly focused on C and C++, however work is eventually planned to support most if not all of the languages that clang does as well. The table below shows the status of each language.
+
+<table>
+	<thead>
+		<tr>
+			<th>Language</th>
+			<th>Standard</th>
+			<th>Status</th>
+	  		<th>Extensions</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+	  <td rowspan="6">C++</td>
+	  <td>99</td>
+	  <td>🚧 In Progress 🚧</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>11</td>
+	  <td>🚧 In Progress 🚧</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>14</td>
+	  <td>🚧 In Progress 🚧</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>17</td>
+	  <td>🚧 In Progress 🚧</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>20</td>
+	  <td>🚧 In Progress 🚧</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>2b</td>
+	  <td>🚧 In Progress 🚧</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td rowspan="5">C</td>
+	  <td>99</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>11</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>14</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>17</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td>2x</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>GNU</td>
+	</tr>
+	<tr>
+	  <td rowspan="1">ObjC</td>
+	  <td>:grey_question:</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>None</td>
+	</tr>
+	<tr>
+	  <td rowspan="1">ObjC++</td>
+	  <td>:grey_question:</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>None</td>
+	</tr>
+	<tr>
+	  <td rowspan="1">OpenCL</td>
+	  <td>:grey_question:</td>
+	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>None</td>
+	</tr>
+	</tbody>
+</table>
+
 ## Configuring and Building
 
 The following steps describe how to build Clank, it should be consistent for Linux, macOS, and Windows, but macOS and Windows remain untested.
