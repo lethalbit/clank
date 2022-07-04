@@ -1,0 +1,43 @@
+name: "Clank Build - Documentation"
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  document:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Initialize Environment
+        shell: bash
+        env:
+          WORKSPACE: ${{ github.workspace }}
+        run: |
+          echo "$HOME/.local/bin:$PATH" >> $GITHUB_PATH
+          echo "GITHUB_WORKSPACE=\"`pwd`\"" >> $GITHUB_ENV
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+          submodules: true
+      - name: Setup
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install graphviz
+          sudo pip3 install --upgrade pip setuptools wheel
+          pip3 install --user -r ./docs/requirements.txt
+      - name: Build Docs
+        shell: bash
+        run: |
+          sphinx-build -b html ./docs/ ./_build/
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: _build
+          CLEAN: true
