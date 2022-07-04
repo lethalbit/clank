@@ -1,4 +1,4 @@
-# Clank
+# Clank :hammer_and_wrench:
 
 Clank is a fully stand-alone C++ front-end based on [LLVM](https://llvm.org/)'s [clang](https://clang.llvm.org/) compiler.
 
@@ -8,6 +8,8 @@ It has been heavily modified and de-coupled from LLVM to be a stand alone librar
 ## Planned Support
 
 The [clang](https://clang.llvm.org/) front-end can parse many languages, but clank is mainly focused on C and C++, however work is eventually planned to support most if not all of the languages that clang does as well. The table below shows the status of each language.
+
+There is also the possibility of adding support for [D lang](https://github.com/ldc-developers/ldc) and also possibly [Fortran](https://flang.llvm.org/docs/) but those would be left until after the MVP of supporting C and C++ has been met.
 
 <table>
 	<thead>
@@ -130,6 +132,7 @@ Once you have configured libalfheim appropriately, to simply build and install s
 
 ```
 $ ninja -C build
+$ ninja -C build test # Optional: Run Tests
 $ ninja -C build install
 ```
 
