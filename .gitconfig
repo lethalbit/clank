@@ -1,0 +1,4 @@
+[pull]
+  rebase = merges
+[rebase]
+  autoStash = true
