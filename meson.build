@@ -73,6 +73,8 @@ add_project_arguments(
 	language: 'cpp'
 )
 
+subdir('contrib')
+
 subdir('src')
 
 if get_option('build_tests')
