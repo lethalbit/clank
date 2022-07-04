@@ -1,0 +1,56 @@
+name: "Clank Build - Windows"
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        cpp_std:
+          - 'c++17'
+          - 'c++20'
+      fail-fast: true
+    env:
+      CC: cl.exe
+      CXX: cl.exe
+      LD: link.exe
+    steps:
+      - name: Initialize Environment
+        shell: bash
+        env:
+          WORKSPACE: ${{ github.workspace }}
+        run: |
+          echo "$HOME/.local/bin:$PATH" >> $GITHUB_PATH
+          echo "GITHUB_WORKSPACE=\"`pwd`\"" >> $GITHUB_ENV
+      - name: Setup compiler
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86_64
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+          submodules: true
+      - name: Setup
+        shell: bash
+        run: |
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install meson ninja
+        working-directory: ${{ runner.temp }}
+      - name: Version tools
+        shell: bash
+        run: |
+          $CC  || true
+          $LD  || true
+          meson --version
+          ninja --version
+      - name: Configure
+        run: meson build --prefix=$HOME/.local -Dcpp_std=${{ matrix.cpp_std }}
+      - name: Build
+        run: ninja -C build
