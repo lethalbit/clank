@@ -41,6 +41,8 @@ jobs:
           meson --version
           ninja --version
       - name: Configure
-        run: meson build --prefix=$HOME/.local -Dcpp_std=${{ matrix.cpp_std }}
+        run: meson build --prefix=$HOME/.local -Dcpp_std=${{ matrix.cpp_std }} -Dbuild_bindings=false -Dbuild_examples=false
       - name: Build
         run: ninja -C build
+      - name: Test
+        run: ninja -C build test
