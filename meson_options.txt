@@ -1,0 +1,34 @@
+option(
+	'bugreport_url',
+	type: 'string',
+	value: 'https://github.com/lethalbit/clank/issues',
+	description: 'URL for bug report submissions'
+)
+
+option(
+	'build_bindings',
+	type: 'boolean',
+	value: true,
+	description: 'Build the library with bindings'
+)
+
+option(
+	'build_tests',
+	type: 'boolean',
+	value: true,
+	description: 'Build the library with tests'
+)
+
+option(
+	'build_examples',
+	type: 'boolean',
+	value: true,
+	description: 'Build the library with examples'
+)
+
+option(
+	'bindings_python',
+	type: 'boolean',
+	value: true,
+	description: 'Build the python bindings (only if build_bindings is enabled)'
+)

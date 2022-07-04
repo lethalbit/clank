@@ -1,0 +1,3 @@
+*
+!.gitignore
+!pybind11.wrap
