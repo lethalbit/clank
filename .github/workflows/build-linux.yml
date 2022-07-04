@@ -1,0 +1,76 @@
+name: "Clank Build - Linux"
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler:
+          - 'gcc-10'
+          - 'gcc-11'
+        cpp_std:
+          - 'c++17'
+          - 'c++20'
+      fail-fast: true
+    steps:
+      - name: Initialize Environment
+        shell: bash
+        env:
+          WORKSPACE: ${{ github.workspace }}
+        run: |
+          echo "$HOME/.local/bin:$PATH" >> $GITHUB_PATH
+          echo "GITHUB_WORKSPACE=\"`pwd`\"" >> $GITHUB_ENV
+      - name: Setup GCC
+        if: startsWith(matrix.compiler, 'gcc')
+        shell: bash
+        run: |
+          CXX=${CC/#gcc/g++}
+          sudo apt-add-repository ppa:ubuntu-toolchain-r/test
+          sudo apt-get update
+          sudo apt-get install $CC $CXX
+          echo "CC=$CC" >> $GITHUB_ENV
+          echo "CXX=$CXX" >> $GITHUB_ENV
+        env:
+          CC: ${{ matrix.compiler }}
+      - name: Setup Clang
+        if: startsWith(matrix.compiler, 'clang')
+        shell: bash
+        run: |
+          sudo apt-add-repository "deb https://apt.llvm.org/focal/ llvm-toolchain-focal${CC/#clang/} main"
+          sudo apt-get update
+          CXX=${CC/#clang/clang++}
+          sudo apt-get install $CC $CXX
+          echo "CC=$CC" >> $GITHUB_ENV
+          echo "CXX=$CXX" >> $GITHUB_ENV
+        env:
+          CC: ${{ matrix.compiler }}
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+          submodules: true
+      - name: Setup
+        shell: bash
+        run: |
+          sudo pip3 install --upgrade pip setuptools wheel
+          pip3 install --user meson ninja
+          sudo apt-get -y install python3-dev
+        working-directory: ${{ runner.temp }}
+      - name: Version tools
+        shell: bash
+        run: |
+          $CC --version
+          $CXX --version
+          meson --version
+          ninja --version
+      - name: Configure
+        run: meson build --prefix=$HOME/.local -Dcpp_std=${{ matrix.cpp_std }}
+      - name: Build
+        run: ninja -C build
