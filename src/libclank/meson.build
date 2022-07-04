@@ -48,6 +48,11 @@ library_srcs = files([
 
 subdir('internal')
 
+subdir('core')
+subdir('lex')
+subdir('parse')
+subdir('ast')
+
 libclank = library(
 	'libclank',
 	library_srcs,
