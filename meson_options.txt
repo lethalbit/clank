@@ -27,6 +27,13 @@ option(
 )
 
 option(
+	'build_fuzzers',
+	type: 'boolean',
+	value: true,
+	description: 'Build fuzzing harness'
+)
+
+option(
 	'bindings_python',
 	type: 'boolean',
 	value: true,

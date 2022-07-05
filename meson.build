@@ -77,6 +77,10 @@ subdir('contrib')
 
 subdir('src')
 
+if get_option('build_fuzzers')
+	subdir('fuzzing')
+endif
+
 if get_option('build_tests')
 	subdir('tests')
 endif
