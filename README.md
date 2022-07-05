@@ -4,6 +4,18 @@ Clank is a fully stand-alone C++ front-end based on [LLVM](https://llvm.org/)'s 
 
 It has been heavily modified and de-coupled from LLVM to be a stand alone library with only the C++ standard libraries as dependencies.
 
+## FAQ
+
+The following are some questions that you may possible have regarding this project.
+
+### Why not just use libclang?
+
+Mainly for personal reasons, I was never a fan of the API, nor how it dragged a large chunk of LLVM around.
+
+### Why not support C++14 and/or C++11
+
+Mainly because a lot of nice things were added in C++17 an it makes de-coupling the code from LLVM easier.
+
 
 ## Planned Support
 
