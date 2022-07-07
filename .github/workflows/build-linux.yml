@@ -14,7 +14,6 @@ jobs:
       matrix:
         compiler:
           - 'gcc-11'
-          - 'clang-11'
         cpp_std:
           - 'c++17'
           - 'c++20'
