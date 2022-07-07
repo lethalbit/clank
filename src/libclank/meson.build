@@ -39,7 +39,11 @@ config_header = configure_file(
 library_deps = [ ]
 
 library_hdrs = files([
-
+	'ast.hh',
+	'clank.hh',
+	'core.hh',
+	'lex.hh',
+	'parse.hh',
 ])
 
 library_srcs = files([
