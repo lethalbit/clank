@@ -1,4 +1,5 @@
 *
 !.gitignore
+!doctest.wrap
 !google-benchmark.wrap
 !pybind11.wrap
