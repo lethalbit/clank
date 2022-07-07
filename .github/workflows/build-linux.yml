@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         compiler:
-          - 'gcc-10'
           - 'gcc-11'
         cpp_std:
           - 'c++17'
