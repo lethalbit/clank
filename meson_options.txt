@@ -6,17 +6,17 @@ option(
 )
 
 option(
-	'build_bindings',
-	type: 'boolean',
-	value: true,
-	description: 'Build the library with bindings'
-)
-
-option(
 	'build_tests',
 	type: 'boolean',
 	value: true,
 	description: 'Build the library with tests'
+)
+
+option(
+	'build_benchmarks',
+	type: 'boolean',
+	value: true,
+	description: 'Build the benchmarks'
 )
 
 option(
@@ -31,6 +31,13 @@ option(
 	type: 'boolean',
 	value: true,
 	description: 'Build fuzzing harness'
+)
+
+option(
+	'build_bindings',
+	type: 'boolean',
+	value: true,
+	description: 'Build the library with bindings'
 )
 
 option(
