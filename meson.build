@@ -16,7 +16,7 @@ project(
 	license: [
 		'Apache-2.0',
 	],
-	meson_version: '>=0.59.0',
+	meson_version: '>=0.63.0',
 )
 
 cxx = meson.get_compiler('cpp')
@@ -73,11 +73,44 @@ add_project_arguments(
 	language: 'cpp'
 )
 
+is_clang        = (cxx.get_id() == 'clang')
+is_gcc          = (cxx.get_id() == 'gcc')
+compiler_verson = cxx.version()
+
+
+if is_gcc and compiler_verson.version_compare('<11.0.0')
+	error('g++ version <= 11.0.0 is required to build Clank')
+elif is_clang and compiler_verson.version_compare('<11.0.0')
+	error('clang++ version <= 11.0.0 is required to build Clank')
+endif
+
+
+do_fuzzing = get_option('build_fuzzers')
+
+	# we use -fsanitize=fuzzer which is only avaiable in clang
+if do_fuzzing
+	if is_clang
+		if not cxx.has_argument('-fsanitize=address,fuzzer')
+			warning('compiler does not support \'-fsanitize=fuzzer\', disabiling fuzzing')
+			do_fuzzing = false
+		else
+			add_project_arguments(
+				'-fsanitize=address,fuzzer',
+				language: 'cpp'
+			)
+		endif
+	else
+		warning('Skipping building fuzzers, not using clang++ as target compiler')
+		do_fuzzing = false
+	endif
+endif
+
+
 subdir('contrib')
 
 subdir('src')
 
-if get_option('build_fuzzers')
+if do_fuzzing
 	subdir('fuzzing')
 endif
 

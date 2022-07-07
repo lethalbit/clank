@@ -15,12 +15,12 @@ config.set('BUGREPORT_URL', get_option('bugreport_url'))
 
 git = find_program('git', required: false, native: true)
 if git.found()
-	git_hash = run_command(git, 'rev-parse', '--short', 'HEAD').stdout().strip()
-	if run_command(git, 'diff', '--quiet').returncode() != 0
+	git_hash = run_command(git, 'rev-parse', '--short', 'HEAD', check: true).stdout().strip()
+	if run_command(git, 'diff', '--quiet', check: false).returncode() != 0
 		git_hash += '-dirty'
 	endif
 	config.set('GIT_HASH', git_hash)
-	describe = run_command(git, 'describe', '--tag')
+	describe = run_command(git, 'describe', '--tag', check: false)
 	if describe.returncode() == 0
 		config.set('VERSION_NUMBER', describe.stdout().strip())
 	else
