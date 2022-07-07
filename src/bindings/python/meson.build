@@ -5,7 +5,7 @@ message('Building bindings: Python')
 py = import('python')
 py = py.find_installation(
 	'python3',
-	required: false,
+	required: true,
 	modules: []
 )
 
@@ -27,6 +27,7 @@ libclank_py = py.extension_module(
 	],
 
 	dependencies: [
+		py.dependency(),
 		pybind11
 	],
 
