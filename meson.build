@@ -16,7 +16,7 @@ project(
 	license: [
 		'Apache-2.0',
 	],
-	meson_version: '>=0.63.0',
+	meson_version: '>=0.62.0',
 )
 
 cxx = meson.get_compiler('cpp')
