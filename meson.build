@@ -98,6 +98,10 @@ if do_fuzzing
 				'-fsanitize=address,fuzzer',
 				language: 'cpp'
 			)
+			add_project_link_arguments(
+				'-fsanitize=address,fuzzer',
+				language: 'cpp'
+			)
 		endif
 	else
 		warning('Skipping building fuzzers, not using clang++ as target compiler')
@@ -109,6 +113,10 @@ endif
 subdir('contrib')
 
 subdir('src')
+
+if get_option('build_benchmarks')
+	subdir('benchmarks')
+endif
 
 if do_fuzzing
 	subdir('fuzzing')
