@@ -58,7 +58,7 @@ subdir('parse')
 subdir('ast')
 
 libclank = library(
-	'libclank',
+	'clank',
 	library_srcs,
 
 	include_directories: [
@@ -68,7 +68,6 @@ libclank = library(
 		library_deps,
 	],
 
-	name_prefix: '',
 	pic: true,
 	gnu_symbol_visibility: 'inlineshidden',
 	implicit_include_directories: false,

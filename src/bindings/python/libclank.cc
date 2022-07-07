@@ -6,7 +6,7 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(libclank, m) {
+PYBIND11_MODULE(clank, m) {
 
 	m.doc() = "A C++ Front-end based on LLVM's clang";
 	m.attr("__version__") = libclank::config::version;

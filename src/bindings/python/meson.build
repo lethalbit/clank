@@ -17,7 +17,7 @@ if not pybind11.found()
 endif
 
 libclank_py = py.extension_module(
-	'libclank',
+	'clank',
 	files([
 		'libclank.cc'
 	]),
