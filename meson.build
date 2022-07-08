@@ -85,7 +85,7 @@ elif is_clang and compiler_verson.version_compare('<11.0.0')
 endif
 
 
-do_fuzzing = get_option('build_fuzzers')
+do_fuzzing = get_option('build_fuzzers') and not meson.is_subproject()
 
 	# we use -fsanitize=fuzzer which is only avaiable in clang
 if do_fuzzing
@@ -114,7 +114,7 @@ subdir('contrib')
 
 subdir('src')
 
-if get_option('build_benchmarks')
+if get_option('build_benchmarks') and not meson.is_subproject()
 	subdir('benchmarks')
 endif
 
@@ -126,6 +126,6 @@ if get_option('build_tests')
 	subdir('tests')
 endif
 
-if get_option('build_examples')
+if get_option('build_examples') and not meson.is_subproject()
 	subdir('examples')
 endif
