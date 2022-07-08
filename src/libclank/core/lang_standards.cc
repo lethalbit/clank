@@ -327,4 +327,16 @@ namespace clank::core {
 		return std::nullopt;
 	}
 
+	[[nodiscard]]
+	std::optional<LanguageStandard_t> LanguageStandard_t::get_by_id(const LanguageID_t id) noexcept {
+		auto res = std::find_if(Languages.begin(), Languages.end(), [&id](const LanguageStandard_t lang) {
+			return lang.id() == id;
+		});
+
+		if (res != Languages.end()) {
+			return std::make_optional(*res);
+		}
+		return std::nullopt;
+	}
+
 }
