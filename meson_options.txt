@@ -27,6 +27,13 @@ option(
 )
 
 option(
+	'install_examples',
+	type: 'boolean',
+	value: true,
+	description: 'Install example sources into $PREFIX/share/libclank/examples'
+)
+
+option(
 	'build_fuzzers',
 	type: 'boolean',
 	value: true,
