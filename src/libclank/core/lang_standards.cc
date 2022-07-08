@@ -9,13 +9,13 @@
 #include <libclank/internal/utility.hh>
 #include <libclank/internal/enum.hh>
 
-namespace libclank::core {
+namespace clank::core {
 	using namespace std::literals::string_view_literals;
-	using namespace libclank::internal::enums;
+	using namespace clank::internal::enums;
 
 	/* This array contains instances of all supported languages and their configuration */
 	const static auto Languages{
-		libclank::internal::make_array<LanguageStandard_t>({
+		clank::internal::make_array<LanguageStandard_t>({
 			/* C Language Definitions */
 			{
 				LanguageID_t::C89, Language_t::C,

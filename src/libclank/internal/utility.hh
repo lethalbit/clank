@@ -8,7 +8,7 @@
 #include <utility>
 #include <array>
 
-namespace libclank::internal {
+namespace clank::internal {
 	namespace {
 		template<typename T, std::size_t N, std::size_t... idx>
 		constexpr std::array<T, N> make_array(T (&&elems)[N], std::index_sequence<idx...>) {

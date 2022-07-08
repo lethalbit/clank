@@ -7,7 +7,7 @@
 #include <type_traits>
 
 /* This is in it's own sub-namespace because for it to work you need to `using` the namespace. */
-namespace libclank::internal::enums {
+namespace clank::internal::enums {
 
 	template<typename T>
 	[[nodiscard]]

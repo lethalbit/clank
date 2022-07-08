@@ -10,7 +10,7 @@
 
 #include <libclank/internal/enum.hh>
 
-namespace libclank::core {
+namespace clank::core {
 	using namespace std::literals::string_view_literals;
 
 	enum struct Language_t : std::uint8_t {

@@ -5,7 +5,7 @@
 
 #include <cstdint>
 
-namespace libclank::internal {
+namespace clank::internal {
 	struct UnicodeRange_t final {
 	private:
 		std::uint32_t _low;
