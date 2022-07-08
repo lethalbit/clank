@@ -47,7 +47,7 @@ library_hdrs = files([
 ])
 
 library_srcs = files([
-
+	'clank.cc',
 ])
 
 subdir('internal')
