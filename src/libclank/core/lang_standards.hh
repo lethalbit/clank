@@ -8,6 +8,8 @@
 #include <array>
 #include <optional>
 
+
+#include <libclank/internal/defs.hh>
 #include <libclank/internal/enum.hh>
 
 namespace clank::core {
@@ -111,9 +113,9 @@ namespace clank::core {
 		CLCXX2021   = OpenCLXX2021,
 	};
 
-	using namespace libclank::internal::enums;
+	using namespace clank::internal::enums;
 
-	struct LanguageStandard_t final {
+	struct LIBCLANK_CLS_API LanguageStandard_t final {
 	private:
 		LanguageID_t _id;
 		Language_t _lang;
@@ -133,6 +135,8 @@ namespace clank::core {
 
 		[[nodiscard]]
 		static std::optional<LanguageStandard_t> get_by_name(const std::string_view name) noexcept;
+		[[nodiscard]]
+		static std::optional<LanguageStandard_t> get_by_id(const LanguageID_t id) noexcept;
 
 		[[nodiscard]]
 		const std::string_view& name() const noexcept { return _name; }
@@ -140,6 +144,9 @@ namespace clank::core {
 		const std::string_view& desc() const noexcept { return _desc; }
 		[[nodiscard]]
 		Language_t lang() const noexcept { return _lang; }
+		[[nodiscard]]
+		LanguageID_t id() const noexcept { return _id; }
+
 
 		/* Quick checks for languages */
 		[[nodiscard]]
