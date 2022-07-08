@@ -29,9 +29,9 @@
 #endif
 
 #if defined(__has_include)
-#define LIBCKANK_HAS_INCLUDE(inc) __has_include(inc)
+#define LIBCLANK_HAS_INCLUDE(inc) __has_include(inc)
 #else
-#define LIBCKANK_HAS_INCLUDE(inc) 0
+#define LIBCLANK_HAS_INCLUDE(inc) 0
 #endif
 
 #endif /* libclank_internal_defs_hh */
