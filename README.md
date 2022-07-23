@@ -1,5 +1,9 @@
 # Clank :hammer_and_wrench:
 
+> **Warning** Clank is still in the alpha stages, and can't reliably parse
+> any subset of C or C++ yet. Work is ongoing to change this as soon as
+> possible, but for now your milage may very.
+
 Clank is a fully stand-alone C++ front-end based on [LLVM](https://llvm.org/)'s [clang](https://clang.llvm.org/) compiler.
 
 It has been heavily modified and de-coupled from LLVM to be a stand alone library with only the C++ standard libraries as dependencies.
@@ -12,7 +16,7 @@ The following are some questions that you may possible have regarding this proje
 
 Mainly for personal reasons, I was never a fan of the API, nor how it dragged a large chunk of LLVM around.
 
-### Why not support C++14 and/or C++11
+### Why not support building with C++14 and/or C++11
 
 Mainly because a lot of nice things were added in C++17 an it makes de-coupling the code from LLVM easier.
 
