@@ -8,6 +8,8 @@ Clank is a fully stand-alone C++ front-end based on [LLVM](https://llvm.org/)'s 
 
 It has been heavily modified and de-coupled from LLVM to be a stand alone library with only the C++ standard libraries as dependencies.
 
+> **Note** Clank is ***ONLY*** a language front-end, it does not generate an IL or machine code
+
 ### Compiler front end comparison
 
 The following table
