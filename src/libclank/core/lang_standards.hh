@@ -15,7 +15,7 @@
 namespace clank::core {
 	using namespace std::literals::string_view_literals;
 
-	enum struct Language_t : std::uint8_t {
+	enum struct LanguageType_t : std::uint8_t {
 		Unkown = 0x00U,
 		/* C-Like Languages */
 		C         = 0x03U,
@@ -118,7 +118,7 @@ namespace clank::core {
 	struct LIBCLANK_CLS_API LanguageStandard_t final {
 	private:
 		LanguageID_t _id;
-		Language_t _lang;
+		LanguageType_t _lang;
 		std::string_view _name;
 		std::string_view _desc;
 		LanguageFeatures_t _flags;
@@ -130,7 +130,7 @@ namespace clank::core {
 
 	public:
 		[[nodiscard]]
-		LanguageStandard_t(LanguageID_t id, Language_t lang, std::string_view name, std::string_view desc, LanguageFeatures_t flags) noexcept :
+		LanguageStandard_t(LanguageID_t id, LanguageType_t lang, std::string_view name, std::string_view desc, LanguageFeatures_t flags) noexcept :
 			_id{id}, _lang{lang}, _name{name}, _desc{desc}, _flags{flags} { /* NOP */ }
 
 		[[nodiscard]]
@@ -143,24 +143,24 @@ namespace clank::core {
 		[[nodiscard]]
 		const std::string_view& desc() const noexcept { return _desc; }
 		[[nodiscard]]
-		Language_t lang() const noexcept { return _lang; }
+		LanguageType_t lang() const noexcept { return _lang; }
 		[[nodiscard]]
 		LanguageID_t id() const noexcept { return _id; }
 
 
 		/* Quick checks for languages */
 		[[nodiscard]]
-		bool is_c() const noexcept { return _lang == Language_t::C; }
+		bool is_c() const noexcept { return _lang == LanguageType_t::C; }
 		[[nodiscard]]
-		bool is_cxx() const noexcept { return _lang == Language_t::CXX; }
+		bool is_cxx() const noexcept { return _lang == LanguageType_t::CXX; }
 		[[nodiscard]]
-		bool is_objc() const noexcept { return _lang == Language_t::ObjC; }
+		bool is_objc() const noexcept { return _lang == LanguageType_t::ObjC; }
 		[[nodiscard]]
-		bool is_objcxx() const noexcept { return _lang == Language_t::ObjCXX; }
+		bool is_objcxx() const noexcept { return _lang == LanguageType_t::ObjCXX; }
 		[[nodiscard]]
-		bool is_opencl() const noexcept { return _lang == Language_t::OpenCL; }
+		bool is_opencl() const noexcept { return _lang == LanguageType_t::OpenCL; }
 		[[nodiscard]]
-		bool is_openclxx() const noexcept { return _lang == Language_t::OpenCLCXX; }
+		bool is_openclxx() const noexcept { return _lang == LanguageType_t::OpenCLCXX; }
 
 
 		/* Various checks for feature flags */
