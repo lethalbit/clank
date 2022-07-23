@@ -2,6 +2,7 @@
 message('Building examples')
 
 example_srcs = [
+	'simple_parser',
 ]
 
 foreach ex : example_srcs
