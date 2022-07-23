@@ -8,6 +8,16 @@ Clank is a fully stand-alone C++ front-end based on [LLVM](https://llvm.org/)'s 
 
 It has been heavily modified and de-coupled from LLVM to be a stand alone library with only the C++ standard libraries as dependencies.
 
+### Compiler front end comparison
+
+The following table
+
+| Front End                              | Open Source        | Notes                         |
+|----------------------------------------|--------------------|-------------------------------|
+| libclang                               | :heavy_check_mark: | Tied to LLVM                  |
+| [EDG Front End](https://www.edg.com/c) | :x:                | Proprietary and Non-free      |
+| clank                                  | :heavy_check_mark: | Only builds w/ C++17 or newer |
+
 ## FAQ
 
 The following are some questions that you may possible have regarding this project.
@@ -119,6 +129,10 @@ There is also the possibility of adding support for [D lang](https://github.com/
 
 A collection of examples will be put in the [examples](./examples/) directory to show how to use Clank to consume C++ code once it is at a point where that is possible.
 
+## Documentation
+
+For more comprehensive documentation, such as usage guides, as well as API documentation, see [https://lethalbit.github.io/clank/](https://lethalbit.github.io/clank/).
+
 ## Configuring and Building
 
 The following steps describe how to build Clank, it should be consistent for Linux, macOS, and Windows, but macOS and Windows remain untested.
@@ -163,7 +177,6 @@ This will build and install Clank into the default prefix which is `/usr/local`,
 If you are building libalfheim for inclusion in a distributions package system then ensure to set `DESTDIR` prior to running meson install.
 
 There is also a `bugreport_url` configuration option that is set to this repositories issues tracker by default, it is recommended to change it to your distributions bug tracking page.
-
 
 ## License
 
