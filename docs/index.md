@@ -62,45 +62,45 @@ There is also the possibility of adding support for [D lang](https://github.com/
 	<tr>
 	  <td rowspan="5">C</td>
 	  <td>99</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>GNU</td>
 	</tr>
 	<tr>
 	  <td>11</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>GNU</td>
 	</tr>
 	<tr>
 	  <td>14</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>GNU</td>
 	</tr>
 	<tr>
 	  <td>17</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>GNU</td>
 	</tr>
 	<tr>
 	  <td>2x</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>GNU</td>
 	</tr>
 	<tr>
 	  <td rowspan="1">ObjC</td>
-	  <td>:grey_question:</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>❔</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>None</td>
 	</tr>
 	<tr>
 	  <td rowspan="1">ObjC++</td>
-	  <td>:grey_question:</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>❔</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>None</td>
 	</tr>
 	<tr>
 	  <td rowspan="1">OpenCL</td>
-	  <td>:grey_question:</td>
-	  <td>:hourglass_flowing_sand: Planned :hourglass_flowing_sand:</td>
+	  <td>❔</td>
+	  <td>⏳ Planned ⏳</td>
 	  <td>None</td>
 	</tr>
 	</tbody>
