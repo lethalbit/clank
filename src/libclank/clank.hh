@@ -55,25 +55,25 @@ namespace clank {
 		Attempts to generate an AST from a std::string.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<void, std::int16_t> parse(const std::string& src, const clank::core::LanguageStandard_t& lang);
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::string& src, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from a std::string_view.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<void, std::int16_t> parse(const std::string_view& src, const clank::core::LanguageStandard_t& lang);
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::string_view& src, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from a file on disk.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<void, std::int16_t> parse(const std::filesystem::path path, const clank::core::LanguageStandard_t& lang);
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::filesystem::path path, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from an open file descriptor.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<void, std::int16_t> parse(const std::int32_t fd, std::nullptr_t);
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::int32_t fd, std::nullptr_t);
 
 }
 
