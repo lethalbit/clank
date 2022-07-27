@@ -3,3 +3,4 @@
 !doctest.wrap
 !google-benchmark.wrap
 !pybind11.wrap
+!sawmill.wrap

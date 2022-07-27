@@ -6,6 +6,20 @@ option(
 )
 
 option(
+	'disable_logging',
+	type: 'boolean',
+	value: false,
+	description: 'Disable all logging, even in debug mode (useful for better benchmarks)'
+)
+
+option(
+	'release_logging',
+	type: 'boolean',
+	value: false,
+	description: 'Enable trace logging even in release mode'
+)
+
+option(
 	'build_tests',
 	type: 'boolean',
 	value: true,

@@ -111,7 +111,6 @@ endif
 
 
 subdir('contrib')
-
 subdir('src')
 
 if get_option('build_benchmarks') and not meson.is_subproject()
