@@ -128,3 +128,5 @@ endif
 if get_option('build_examples') and not meson.is_subproject()
 	subdir('examples')
 endif
+
+subdir('docs')
