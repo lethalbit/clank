@@ -23,7 +23,7 @@ Optionally, when also building with binding support (which is the default) you a
 
 ## Configuring
 
-You can build libalfheim with the default options, all of which can be found in [`meson_options.txt`](https://github.com/lethalbit/clank/blob/main/meson_options.txt). You can change these by specifying `-D<OPTION_NAME>=<VALUE>` at initial meson invocation time, or with `meson configure` in the build directory post initial configure.
+You can build Clank with the default options, all of which can be found in [`meson_options.txt`](https://github.com/lethalbit/clank/blob/main/meson_options.txt). You can change these by specifying `-D<OPTION_NAME>=<VALUE>` at initial meson invocation time, or with `meson configure` in the build directory post initial configure.
 
 To change the install prefix, which is `/usr/local` by default ensure to pass `--prefix <PREFIX>` when running meson for the first time.
 
@@ -31,7 +31,7 @@ In either case, simply running `meson build` from the root of the repository wil
 
 ## Building
 
-Once you have configured libalfheim appropriately, to simply build and install simply run the following:
+Once you have configured Clank appropriately, to simply build and install simply run the following:
 
 ```
 $ ninja -C build
@@ -43,6 +43,6 @@ This will build and install Clank into the default prefix which is `/usr/local`,
 
 ## Notes to Package Maintainers
 
-If you are building libalfheim for inclusion in a distributions package system then ensure to set `DESTDIR` prior to running meson install.
+If you are building Clank for inclusion in a distributions package system then ensure to set `DESTDIR` prior to running meson install.
 
 There is also a `bugreport_url` configuration option that is set to this repositories issues tracker by default, it is recommended to change it to your distributions bug tracking page.
