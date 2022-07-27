@@ -106,13 +106,13 @@
 </section>
 <section id="configuring">
 <h2>Configuring<a class="headerlink" href="#configuring" title="Permalink to this heading"></a></h2>
-<p>You can build libalfheim with the default options, all of which can be found in <a class="reference external" href="https://github.com/lethalbit/clank/blob/main/meson_options.txt"><code class="docutils literal notranslate"><span class="pre">meson_options.txt</span></code></a>. You can change these by specifying <code class="docutils literal notranslate"><span class="pre">-D&lt;OPTION_NAME&gt;=&lt;VALUE&gt;</span></code> at initial meson invocation time, or with <code class="docutils literal notranslate"><span class="pre">meson</span> <span class="pre">configure</span></code> in the build directory post initial configure.</p>
+<p>You can build Clank with the default options, all of which can be found in <a class="reference external" href="https://github.com/lethalbit/clank/blob/main/meson_options.txt"><code class="docutils literal notranslate"><span class="pre">meson_options.txt</span></code></a>. You can change these by specifying <code class="docutils literal notranslate"><span class="pre">-D&lt;OPTION_NAME&gt;=&lt;VALUE&gt;</span></code> at initial meson invocation time, or with <code class="docutils literal notranslate"><span class="pre">meson</span> <span class="pre">configure</span></code> in the build directory post initial configure.</p>
 <p>To change the install prefix, which is <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code> by default ensure to pass <code class="docutils literal notranslate"><span class="pre">--prefix</span> <span class="pre">&lt;PREFIX&gt;</span></code> when running meson for the first time.</p>
 <p>In either case, simply running <code class="docutils literal notranslate"><span class="pre">meson</span> <span class="pre">build</span></code> from the root of the repository will be sufficient and place all of the build files in the <code class="docutils literal notranslate"><span class="pre">build</span></code> subdirectory.</p>
 </section>
 <section id="building">
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this heading"></a></h2>
-<p>Once you have configured libalfheim appropriately, to simply build and install simply run the following:</p>
+<p>Once you have configured Clank appropriately, to simply build and install simply run the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ninja -C build
 $ ninja -C build test # Optional: Run Tests
 $ ninja -C build install
@@ -122,7 +122,7 @@ $ ninja -C build install
 </section>
 <section id="notes-to-package-maintainers">
 <h2>Notes to Package Maintainers<a class="headerlink" href="#notes-to-package-maintainers" title="Permalink to this heading"></a></h2>
-<p>If you are building libalfheim for inclusion in a distributions package system then ensure to set <code class="docutils literal notranslate"><span class="pre">DESTDIR</span></code> prior to running meson install.</p>
+<p>If you are building Clank for inclusion in a distributions package system then ensure to set <code class="docutils literal notranslate"><span class="pre">DESTDIR</span></code> prior to running meson install.</p>
 <p>There is also a <code class="docutils literal notranslate"><span class="pre">bugreport_url</span></code> configuration option that is set to this repositories issues tracker by default, it is recommended to change it to your distributions bug tracking page.</p>
 </section>
 </section>
