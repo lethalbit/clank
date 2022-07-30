@@ -38,6 +38,10 @@ config_header = configure_file(
 
 library_deps = [ ]
 
+if enable_logging
+	library_deps += [ sawmill ]
+endif
+
 library_hdrs = files([
 	'ast.hh',
 	'clank.hh',
