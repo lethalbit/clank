@@ -29,8 +29,37 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
+    - name: Initialize Environment
+      shell: bash
+      env:
+        WORKSPACE: ${{ github.workspace }}
+      run: |
+        echo "$HOME/.local/bin:$PATH" >> $GITHUB_PATH
+        echo "GITHUB_WORKSPACE=\"`pwd`\"" >> $GITHUB_ENV
+    - name: Setup GCC
+      shell: bash
+      run: |
+        CXX=${CC/#gcc/g++}
+        sudo apt-add-repository ppa:ubuntu-toolchain-r/test
+        sudo apt-get update
+        sudo apt-get install gcc-11 g++-11
+    - name: Setup
+      shell: bash
+      run: |
+        sudo pip3 install --upgrade pip setuptools wheel
+        pip3 install --user meson ninja
+        sudo apt-get -y install python3-dev
+      working-directory: ${{ runner.temp }}
+    - name: Version tools
+      shell: bash
+      run: |
+
+        meson --version
+        ninja --version
+    - name: Configure
+      run: CXX=$CXX CC=$CC meson build --prefix=$HOME/.local -Dcpp_std=c++17 -Dbuild_benchmarks=false -Dbuild_fuzzers=false -Dbuild_examples=false -Db_sanitize=address,undefined
+    - name: Build
+      run: ninja -C build
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
