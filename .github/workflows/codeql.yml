@@ -57,7 +57,7 @@ jobs:
         meson --version
         ninja --version
     - name: Configure
-      run: CXX=$CXX CC=$CC meson build --prefix=$HOME/.local -Dcpp_std=c++17 -Dbuild_benchmarks=false -Dbuild_fuzzers=false -Dbuild_examples=false -Db_sanitize=address,undefined
+      run: CXX=g++-11 CC=gcc-11 meson build --prefix=$HOME/.local -Dcpp_std=c++17 -Dbuild_benchmarks=false -Dbuild_fuzzers=false -Dbuild_examples=false -Db_sanitize=address,undefined
     - name: Build
       run: ninja -C build
 
