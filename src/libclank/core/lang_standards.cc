@@ -317,7 +317,8 @@ namespace clank::core {
 
 	[[nodiscard]]
 	std::optional<LanguageStandard_t> LanguageStandard_t::get_by_name(const std::string_view name) noexcept {
-		auto res = std::find_if(Languages.begin(), Languages.end(), [&name](const LanguageStandard_t lang) {
+		// NOLINTNEXTLINE(readability-qualified-auto)
+		const auto res = std::find_if(Languages.begin(), Languages.end(), [&name](const LanguageStandard_t lang) {
 			return lang.name() == name;
 		});
 
@@ -328,9 +329,10 @@ namespace clank::core {
 	}
 
 	[[nodiscard]]
-	std::optional<LanguageStandard_t> LanguageStandard_t::get_by_id(const LanguageID_t id) noexcept {
-		auto res = std::find_if(Languages.begin(), Languages.end(), [&id](const LanguageStandard_t lang) {
-			return lang.id() == id;
+	std::optional<LanguageStandard_t> LanguageStandard_t::get_by_id(const LanguageID_t lang_id) noexcept {
+		// NOLINTNEXTLINE(readability-qualified-auto)
+		const auto res = std::find_if(Languages.begin(), Languages.end(), [&lang_id](const LanguageStandard_t lang) {
+			return lang.id() == lang_id;
 		});
 
 		if (res != Languages.end()) {

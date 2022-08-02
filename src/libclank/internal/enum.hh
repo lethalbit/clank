@@ -12,190 +12,190 @@ namespace clank::internal::enums {
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator|(T l, T r) noexcept {
+	operator|(T lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
-			static_cast<U>(l) | static_cast<U>(r)
+			static_cast<U>(lhs) | static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator|=(T& l, T r) noexcept {
+	operator|=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			static_cast<U>(l) | static_cast<U>(r)
+		return lhs = static_cast<T>(
+			static_cast<U>(lhs) | static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator&(T l, T r) noexcept {
+	operator&(T lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
-			static_cast<U>(l) & static_cast<U>(r)
+			static_cast<U>(lhs) & static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator&=(T& l, T r) noexcept {
+	operator&=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			static_cast<U>(l) & static_cast<U>(r)
+		return lhs = static_cast<T>(
+			static_cast<U>(lhs) & static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator^(T l, T r) noexcept {
+	operator^(T lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
-			static_cast<U>(l) ^ static_cast<U>(r)
+			static_cast<U>(lhs) ^ static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator^=(T& l, T r) noexcept {
+	operator^=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			static_cast<U>(l) ^ static_cast<U>(r)
+		return lhs = static_cast<T>(
+			static_cast<U>(lhs) ^ static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T>, T>
-	operator~(T l) noexcept {
+	operator~(T lhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			~static_cast<U>(l)
+		return lhs = static_cast<T>(
+			~static_cast<U>(lhs)
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator|(T l, V r) noexcept {
+	operator|(T lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
-			static_cast<U>(l) | r
+			static_cast<U>(lhs) | rhs
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator|=(T& l, T r) noexcept {
+	operator|=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			static_cast<U>(l) | r
+		return lhs = static_cast<T>(
+			static_cast<U>(lhs) | rhs
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator&(T l, T r) noexcept {
+	operator&(T lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
-			static_cast<U>(l) & r
+			static_cast<U>(lhs) & rhs
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator&=(T& l, T r) noexcept {
+	operator&=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			static_cast<U>(l) & r
+		return lhs = static_cast<T>(
+			static_cast<U>(lhs) & rhs
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator^(T l, T r) noexcept {
+	operator^(T lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
-			static_cast<U>(l) ^ r
+			static_cast<U>(lhs) ^ rhs
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator^=(T& l, T r) noexcept {
+	operator^=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
-		return l = static_cast<T>(
-			static_cast<U>(l) ^ r
+		return lhs = static_cast<T>(
+			static_cast<U>(lhs) ^ rhs
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator|(T l, V r) noexcept {
+	operator|(T lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
 		return static_cast<T>(
-			l | static_cast<U>(r)
+			lhs | static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator|=(T& l, T r) noexcept {
+	operator|=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
-		return l = static_cast<T>(
-			l | static_cast<U>(r)
+		return lhs = static_cast<T>(
+			lhs | static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator&(T l, T r) noexcept {
-		using U = typename std::underlying_type_t<V>;
-		return static_cast<T>(
-			l & static_cast<U>(r)
-		);
-	}
-
-	template<typename T, typename V>
-	[[nodiscard]]
-	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator&=(T& l, T r) noexcept {
-		using U = typename std::underlying_type_t<V>;
-		return l = static_cast<T>(
-			l & static_cast<U>(r)
-		);
-	}
-
-	template<typename T, typename V>
-	[[nodiscard]]
-	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator^(T l, T r) noexcept {
+	operator&(T lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
 		return static_cast<T>(
-			l ^ static_cast<U>(r)
+			lhs & static_cast<U>(rhs)
 		);
 	}
 
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator^=(T& l, T r) noexcept {
+	operator&=(T& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
-		return l = static_cast<T>(
-			l ^ static_cast<U>(r)
+		return lhs = static_cast<T>(
+			lhs & static_cast<U>(rhs)
+		);
+	}
+
+	template<typename T, typename V>
+	[[nodiscard]]
+	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
+	operator^(T lhs, T rhs) noexcept {
+		using U = typename std::underlying_type_t<V>;
+		return static_cast<T>(
+			lhs ^ static_cast<U>(rhs)
+		);
+	}
+
+	template<typename T, typename V>
+	[[nodiscard]]
+	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
+	operator^=(T& lhs, T rhs) noexcept {
+		using U = typename std::underlying_type_t<V>;
+		return lhs = static_cast<T>(
+			lhs ^ static_cast<U>(rhs)
 		);
 	}
 

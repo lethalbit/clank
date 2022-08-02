@@ -29,8 +29,10 @@
 #endif
 
 #if defined(__has_include)
+// NOLINTNEXTLINE(cppcoreguidelines-macro-usage)
 #define LIBCLANK_HAS_INCLUDE(inc) __has_include(inc)
 #else
+// NOLINTNEXTLINE(cppcoreguidelines-macro-usage)
 #define LIBCLANK_HAS_INCLUDE(inc) 0
 #endif
 

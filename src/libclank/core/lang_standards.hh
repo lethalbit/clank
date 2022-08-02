@@ -130,13 +130,14 @@ namespace clank::core {
 
 	public:
 		[[nodiscard]]
-		LanguageStandard_t(LanguageID_t id, LanguageType_t lang, std::string_view name, std::string_view desc, LanguageFeatures_t flags) noexcept :
-			_id{id}, _lang{lang}, _name{name}, _desc{desc}, _flags{flags} { /* NOP */ }
+		// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+		LanguageStandard_t(LanguageID_t lang_id, LanguageType_t lang, std::string_view name, std::string_view desc, LanguageFeatures_t flags) noexcept :
+			_id{lang_id}, _lang{lang}, _name{name}, _desc{desc}, _flags{flags} { /* NOP */ }
 
 		[[nodiscard]]
-		static std::optional<LanguageStandard_t> get_by_name(const std::string_view name) noexcept;
+		static std::optional<LanguageStandard_t> get_by_name(std::string_view name) noexcept;
 		[[nodiscard]]
-		static std::optional<LanguageStandard_t> get_by_id(const LanguageID_t id) noexcept;
+		static std::optional<LanguageStandard_t> get_by_id(LanguageID_t lang_id) noexcept;
 
 		[[nodiscard]]
 		const std::string_view& name() const noexcept { return _name; }

@@ -67,13 +67,13 @@ namespace clank {
 		Attempts to generate an AST from a file on disk.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::filesystem::path path, const clank::core::LanguageStandard_t& lang);
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::filesystem::path& path, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from an open file descriptor.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::int32_t fd, std::nullptr_t);
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(std::int32_t fd, std::nullptr_t); // NOLINT(readability-identifier-length)
 
 }
 

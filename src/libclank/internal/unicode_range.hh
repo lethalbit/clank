@@ -11,16 +11,16 @@ namespace clank::internal {
 		std::uint32_t _low;
 		std::uint32_t _high;
 	public:
-
+		// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 		constexpr UnicodeRange_t(std::uint32_t low, std::uint32_t high) noexcept :
 			_low{low}, _high{high} { /* */ }
 
-		inline bool operator<(std::uint32_t v) {
-			return v < _low;
+		inline bool operator<(std::uint32_t val) const noexcept {
+			return val < _low;
 		}
 
-		inline bool operator>(std::uint32_t v) {
-			return v > _high;
+		inline bool operator>(std::uint32_t val) const noexcept {
+			return val > _high;
 		}
 	};
 }

@@ -9,9 +9,9 @@
 #include <libclank/internal/unicode_range.hh>
 #include <libclank/internal/utility.hh>
 
-namespace libclank::lex {
+namespace clank::lex {
 	constexpr static auto XIDStart{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			{0x0041, 0x005A},   {0x0061, 0x007A},   {0x00AA, 0x00AA},
 			{0x00B5, 0x00B5},   {0x00BA, 0x00BA},   {0x00C0, 0x00D6},
 			{0x00D8, 0x00F6},   {0x00F8, 0x02C1},   {0x02C6, 0x02D1},
@@ -235,7 +235,7 @@ namespace libclank::lex {
 	};
 
 	constexpr static auto XIDContinue{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			{0x0030, 0x0039},   {0x005F, 0x005F},   {0x00B7, 0x00B7},
 			{0x0300, 0x036F},   {0x0387, 0x0387},   {0x0483, 0x0487},
 			{0x0591, 0x05BD},   {0x05BF, 0x05BF},   {0x05C1, 0x05C2},
@@ -361,7 +361,7 @@ namespace libclank::lex {
 	};
 
 	constexpr static auto C11AllowedID{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			// 1
 			{ 0x00A8, 0x00A8 }, { 0x00AA, 0x00AA }, { 0x00AD, 0x00AD },
 			{ 0x00AF, 0x00AF }, { 0x00B2, 0x00B5 }, { 0x00B7, 0x00BA },
@@ -391,7 +391,7 @@ namespace libclank::lex {
 		})
 	};
 	constexpr static auto C99AllowedID{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			// Latin (1)
 			{ 0x00AA, 0x00AA },
 
@@ -610,13 +610,13 @@ namespace libclank::lex {
 		})
 	};
 	constexpr static auto C11DisallowedIDStart{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			{ 0x0300, 0x036F }, { 0x1DC0, 0x1DFF }, { 0x20D0, 0x20FF },
 			{ 0xFE20, 0xFE2F }
 		})
 	};
 	constexpr static auto C99DisallowedIDStart{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			{ 0x0660, 0x0669 }, { 0x06F0, 0x06F9 }, { 0x0966, 0x096F },
 			{ 0x09E6, 0x09EF }, { 0x0A66, 0x0A6F }, { 0x0AE6, 0x0AEF },
 			{ 0x0B66, 0x0B6F }, { 0x0BE7, 0x0BEF }, { 0x0C66, 0x0C6F },
@@ -625,7 +625,7 @@ namespace libclank::lex {
 		})
 	};
 	constexpr static auto UnicodeWhitespace{
-		libclank::internal::make_array<libclank::internal::UnicodeRange_t>({
+		clank::internal::make_array<clank::internal::UnicodeRange_t>({
 			{ 0x0085, 0x0085 }, { 0x00A0, 0x00A0 }, { 0x1680, 0x1680 },
 			{ 0x180E, 0x180E }, { 0x2000, 0x200A }, { 0x2028, 0x2029 },
 			{ 0x202F, 0x202F }, { 0x205F, 0x205F }, { 0x3000, 0x3000 }
