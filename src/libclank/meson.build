@@ -38,7 +38,7 @@ config_header = configure_file(
 
 library_deps = [ ]
 
-if enable_logging
+if enable_logging and not is_windows
 	library_deps += [ sawmill ]
 endif
 
@@ -78,7 +78,7 @@ libclank = library(
 
 	cpp_args: [
 		'-DLIBCLANK_BUILD_INTERNAL'
-	],
+	] + cxx_extra_args,
 	install: (not meson.is_subproject())
 )
 
