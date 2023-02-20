@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 library_hdrs_lex = files([
-	'unicode_ranges.hh'
+	'codepoints.hh'
 ])
 
 library_srcs += files([
