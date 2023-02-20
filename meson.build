@@ -88,7 +88,7 @@ endif
 
 do_fuzzing = get_option('build_fuzzers') and not meson.is_subproject()
 
-	# we use -fsanitize=fuzzer which is only avaiable in clang
+# we use -fsanitize=fuzzer which is only avaiable in clang
 if do_fuzzing
 	if is_clang
 		if not cxx.has_argument('-fsanitize=address,fuzzer')
