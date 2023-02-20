@@ -77,7 +77,7 @@ libclank = library(
 	implicit_include_directories: false,
 
 	cpp_args: [
-		'-DLIBCLANK_BUILD_INTERNAL'
+		'-DCLANK_BUILD_INTERNAL'
 	] + cxx_extra_args,
 	install: (not meson.is_subproject())
 )
@@ -96,14 +96,14 @@ libclank_dep = declare_dependency(
 if not meson.is_subproject()
 	install_headers(
 		library_hdrs + [ config_header ],
-		subdir: 'libclank'
+		subdir: 'clank'
 	)
 
 	pkgconfig = import('pkgconfig')
 	pkgconfig.generate(
 		subdirs: '.',
-		name: 'libclank',
-		filebase: 'libclank',
+		name: 'clank',
+		filebase: 'clank',
 		libraries: [ libclank ],
 		version: meson.project_version(),
 		description: 'A C++ Front-end based on LLVM\'s clang.'

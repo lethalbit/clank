@@ -6,8 +6,8 @@
 #include <cstdint>
 #include <array>
 
-#include <libclank/core/codepoint_range.hh>
-#include <libclank/internal/utility.hh>
+#include <clank/core/codepoint_range.hh>
+#include <clank/internal/utility.hh>
 
 namespace clank::lex {
 	using clank::core::CodepointRange_t;

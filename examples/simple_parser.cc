@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string_view>
 
-#include <libclank/clank.hh>
+#include <clank/clank.hh>
 
 using namespace std::literals::string_view_literals;
 
@@ -17,6 +17,7 @@ int main(int, char**) {
 
 	if (auto lang = LanguageStandard_t::get_by_id(LanguageID_t::C11)) {
 		clank::parse(src, *lang).map([](const auto& ast){
+			std::cout << "Successfully parsed code!\n";
 			/* Do AST things */
 		}).map_error([](const std::error_code err){
 			std::cerr << "Unable to get AST: " << err.message() << "\n";

@@ -36,7 +36,7 @@ if enable_logging and not is_windows
 endif
 
 
-subdir('libclank')
+subdir('clank')
 
 if get_option('build_bindings')
 	subdir('bindings')

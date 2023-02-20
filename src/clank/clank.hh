@@ -36,13 +36,13 @@
 #if !defined(CLANK_CLANK_HH)
 #define CLANK_CLANK_HH
 
-#include <libclank/ast.hh>
-#include <libclank/core.hh>
-#include <libclank/lex.hh>
-#include <libclank/parse.hh>
+#include <clank/ast.hh>
+#include <clank/core.hh>
+#include <clank/lex.hh>
+#include <clank/parse.hh>
 
-#include <libclank/internal/expected.hh>
-#include <libclank/internal/defs.hh>
+#include <clank/internal/expected.hh>
+#include <clank/internal/defs.hh>
 
 
 #include <filesystem>
@@ -55,31 +55,31 @@ namespace clank {
 		Attempts to generate an AST from a std::string.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::string& src, const clank::core::LanguageStandard_t& lang);
+	CLANK_API expected<ast::Node, std::error_code> parse(const std::string& src, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from a std::string_view.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::string_view& src, const clank::core::LanguageStandard_t& lang);
+	CLANK_API expected<ast::Node, std::error_code> parse(const std::string_view& src, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from a file on disk.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(const std::filesystem::path& path, const clank::core::LanguageStandard_t& lang);
+	CLANK_API expected<ast::Node, std::error_code> parse(const std::filesystem::path& path, const clank::core::LanguageStandard_t& lang);
 
 	/*!
 		Attempts to generate an AST from an open file descriptor.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(std::int32_t fd, const clank::core::LanguageStandard_t& lang); // NOLINT(readability-identifier-length)
+	CLANK_API expected<ast::Node, std::error_code> parse(std::int32_t fd, const clank::core::LanguageStandard_t& lang); // NOLINT(readability-identifier-length)
 
 	/*!
 		Attempts to generate an AST from an in-memory buffer
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(const void const* buffer, std::size_t len, const clank::core::LanguageStandard_t& lang);
+	CLANK_API expected<ast::Node, std::error_code> parse(const void* buffer, std::size_t len, const clank::core::LanguageStandard_t& lang);
 }
 
 

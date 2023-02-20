@@ -3,6 +3,7 @@
 library_hdrs_core = files([
 	'codepoint_range.hh',
 	'lang_standards.hh',
+	'source_location.hh',
 ])
 
 library_srcs += files([
@@ -12,6 +13,6 @@ library_srcs += files([
 if not meson.is_subproject()
 	install_headers(
 		library_hdrs_core,
-		subdir: 'libclank' / 'core'
+		subdir: 'clank' / 'core'
 	)
 endif

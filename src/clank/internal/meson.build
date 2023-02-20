@@ -14,6 +14,6 @@ library_srcs += files([
 if not meson.is_subproject()
 	install_headers(
 		library_hdrs_internal,
-		subdir: 'libclank' / 'internal'
+		subdir: 'clank' / 'internal'
 	)
 endif

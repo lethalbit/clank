@@ -9,8 +9,8 @@
 #include <optional>
 
 
-#include <libclank/internal/defs.hh>
-#include <libclank/internal/enum.hh>
+#include <clank/internal/defs.hh>
+#include <clank/internal/enum.hh>
 
 namespace clank::core {
 	using namespace std::literals::string_view_literals;
@@ -126,7 +126,7 @@ namespace clank::core {
 
 	using namespace clank::internal::enums;
 
-	struct LIBCLANK_CLS_API LanguageStandard_t final {
+	struct CLANK_CLS_API LanguageStandard_t final {
 	private:
 		LanguageID_t _id;
 		LanguageType_t _lang;

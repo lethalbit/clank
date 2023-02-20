@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 /* clank.cc - Impl for the main parsing endpoints */
 
-#include <libclank/internal/expected.hh>
+#include <clank/internal/expected.hh>
 
-#include <libclank/clank.hh>
+#include <clank/clank.hh>
 
 #include <filesystem>
 #include <string>
@@ -38,7 +38,7 @@ namespace clank {
 	}
 
 	[[nodiscard]]
-	expected<ast::Node, std::error_code> parse(const void const* buffer, std::size_t len, const clank::core::LanguageStandard_t& lang) {
+	expected<ast::Node, std::error_code> parse(const void* buffer, std::size_t len, const clank::core::LanguageStandard_t& lang) {
 		return {};
 	}
 

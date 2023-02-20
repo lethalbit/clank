@@ -9,6 +9,6 @@
 #if !defined(CLANK_AST_HH)
 #define CLANK_AST_HH
 
-#include <libclank/ast/node.hh>
+#include <clank/ast/node.hh>
 
 #endif /* CLANK_AST_HH */

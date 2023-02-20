@@ -5,9 +5,9 @@
 #if !defined(CLANK_INTERNAL_EXPECTED)
 #define CLANK_INTERNAL_EXPECTED
 
-#include <libclank/internal/defs.hh>
+#include <clank/internal/defs.hh>
 
-#if LIBCLANK_HAS_INCLUDE("<expected>")
+#if CLANK_HAS_INCLUDE("<expected>")
 
 #include <expected>
 

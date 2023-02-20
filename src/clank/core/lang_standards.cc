@@ -4,10 +4,10 @@
 #include <algorithm>
 #include <optional>
 
-#include <libclank/core/lang_standards.hh>
+#include <clank/core/lang_standards.hh>
 
-#include <libclank/internal/utility.hh>
-#include <libclank/internal/enum.hh>
+#include <clank/internal/utility.hh>
+#include <clank/internal/enum.hh>
 
 namespace clank::core {
 	using namespace std::literals::string_view_literals;

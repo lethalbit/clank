@@ -36,7 +36,7 @@ libclank_py = py.extension_module(
 	],
 
 	cpp_args: [
-		'-DLIBCLANK_BINDINGS_PYTHON'
+		'-DCLANK_BINDINGS_PYTHON'
 	],
 
 	install: (not meson.is_subproject())
