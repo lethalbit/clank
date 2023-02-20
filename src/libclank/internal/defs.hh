@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 #pragma once
-#if !defined(libclank_internal_defs_hh)
-#define libclank_internal_defs_hh
+#if !defined(CLANK_INTERNAL_DEFS_HH)
+#define CLANK_INTERNAL_DEFS_HH
 
 #if defined(_MSC_VER) && !defined(_WINDOWS)
 #	define _WINDOWS 1
@@ -36,4 +36,4 @@
 #define LIBCLANK_HAS_INCLUDE(inc) 0
 #endif
 
-#endif /* libclank_internal_defs_hh */
+#endif /* CLANK_INTERNAL_DEFS_HH */

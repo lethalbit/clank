@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 #pragma once
-#if !defined(libclank_core_lang_standards_hh)
-#define libclank_core_lang_standards_hh
+#if !defined(CLANK_CORE_LANG_STANDARDS_HH)
+#define CLANK_CORE_LANG_STANDARDS_HH
 
 #include <cstdint>
 #include <string_view>
@@ -26,23 +26,34 @@ namespace clank::core {
 		OpenCLCXX = 0x08U,
 	};
 
-	enum struct LanguageFeatures_t : std::uint16_t {
-		None        = 0b0000'0000'0000'0000U,
-		LineComment = 0b0000'0000'0000'0010U,
-		C99         = 0b0000'0000'0000'0100U,
-		C11         = 0b0000'0000'0000'1000U,
-		C17         = 0b0000'0000'0001'0000U,
-		C2X         = 0b0000'0000'0010'0000U,
-		CXX         = 0b0000'0000'0100'0000U,
-		CXX11       = 0b0000'0000'1000'0000U,
-		CXX14       = 0b0000'0001'0000'0000U,
-		CXX17       = 0b0000'0010'0000'0000U,
-		CXX20       = 0b0000'0100'0000'0000U,
-		CXX2B       = 0b0000'1000'0000'0000U,
-		Digraphs    = 0b0001'0000'0000'0000U,
-		GNU         = 0b0010'0000'0000'0000U,
-		HexFloats   = 0b0100'0000'0000'0000U,
-		OpenCL      = 0b1000'0000'0000'0000U,
+	/*
+		There are literally like a billion language options
+		and figuring out which ones are never used and the
+		like and also untangling codegen/backend from the
+		front-end is hard, only the following are initially
+		defined but there should be room for more if need be.
+
+
+		BUG: You can set multiple language standards atm
+			 Need to check this in the struct.
+	*/
+	enum struct LanguageFeatures_t : std::uint64_t {
+		None        = 0x0000'0000'0000'0000U,
+		LineComment = 0b0000'0000'0000'0001U,
+		C99         = 0b0000'0000'0000'0010U,
+		C11         = 0b0000'0000'0000'0100U,
+		C17         = 0b0000'0000'0000'1000U,
+		C2X         = 0b0000'0000'0001'0000U,
+		CXX         = 0b0000'0000'0010'0000U,
+		CXX11       = 0b0000'0000'0100'0000U,
+		CXX14       = 0b0000'0000'1000'0000U,
+		CXX17       = 0b0000'0001'0000'0000U,
+		CXX20       = 0b0000'0010'0000'0000U,
+		CXX2B       = 0b0000'0100'0000'0000U,
+		Digraphs    = 0b0000'1000'0000'0000U,
+		GNU         = 0b0001'0000'0000'0000U,
+		HexFloats   = 0b0010'0000'0000'0000U,
+		OpenCL      = 0b0100'0000'0000'0000U,
 	};
 
 	enum struct LanguageID_t : std::uint8_t {
@@ -198,4 +209,4 @@ namespace clank::core {
 	};
 }
 
-#endif /* libclank_core_lang_standards_hh */
+#endif /* CLANK_CORE_LANG_STANDARDS_HH */

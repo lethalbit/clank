@@ -33,8 +33,8 @@
 */
 
 #pragma once
-#if !defined(libclank_clank_hh)
-#define libclank_clank_hh
+#if !defined(CLANK_CLANK_HH)
+#define CLANK_CLANK_HH
 
 #include <libclank/ast.hh>
 #include <libclank/core.hh>
@@ -73,9 +73,14 @@ namespace clank {
 		Attempts to generate an AST from an open file descriptor.
 	*/
 	[[nodiscard]]
-	LIBCLANK_API expected<ast::Node, std::error_code> parse(std::int32_t fd, std::nullptr_t); // NOLINT(readability-identifier-length)
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(std::int32_t fd, const clank::core::LanguageStandard_t& lang); // NOLINT(readability-identifier-length)
 
+	/*!
+		Attempts to generate an AST from an in-memory buffer
+	*/
+	[[nodiscard]]
+	LIBCLANK_API expected<ast::Node, std::error_code> parse(const void const* buffer, std::size_t len, const clank::core::LanguageStandard_t& lang);
 }
 
 
-#endif /* libclank_clank_hh */
+#endif /* CLANK_CLANK_HH */

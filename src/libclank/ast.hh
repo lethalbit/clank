@@ -6,9 +6,9 @@
 */
 
 #pragma once
-#if !defined(libclank_ast_hh)
-#define libclank_ast_hh
+#if !defined(CLANK_AST_HH)
+#define CLANK_AST_HH
 
 #include <libclank/ast/node.hh>
 
-#endif /* libclank_ast_hh */
+#endif /* CLANK_AST_HH */

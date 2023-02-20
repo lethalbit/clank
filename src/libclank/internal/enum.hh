@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 /* internal/enum.hh - C++ Enum utilities */
 #pragma once
-#if !defined(libclank_internal_enum_hh)
-#define libclank_internal_enum_hh
+#if !defined(CLANK_INTERNAL_ENUM_HH)
+#define CLANK_INTERNAL_ENUM_HH
 
 #include <type_traits>
 
@@ -92,7 +92,7 @@ namespace clank::internal::enums {
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator|=(T& lhs, T rhs) noexcept {
+	operator|=(T& lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return lhs = static_cast<T>(
 			static_cast<U>(lhs) | rhs
@@ -102,7 +102,7 @@ namespace clank::internal::enums {
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator&(T lhs, T rhs) noexcept {
+	operator&(T lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
 			static_cast<U>(lhs) & rhs
@@ -112,7 +112,7 @@ namespace clank::internal::enums {
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator&=(T& lhs, T rhs) noexcept {
+	operator&=(T& lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return lhs = static_cast<T>(
 			static_cast<U>(lhs) & rhs
@@ -122,7 +122,7 @@ namespace clank::internal::enums {
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator^(T lhs, T rhs) noexcept {
+	operator^(T lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return static_cast<T>(
 			static_cast<U>(lhs) ^ rhs
@@ -132,7 +132,7 @@ namespace clank::internal::enums {
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_enum_v<T> && std::is_integral_v<V>, T>
-	operator^=(T& lhs, T rhs) noexcept {
+	operator^=(T& lhs, V rhs) noexcept {
 		using U = typename std::underlying_type_t<T>;
 		return lhs = static_cast<T>(
 			static_cast<U>(lhs) ^ rhs
@@ -141,8 +141,8 @@ namespace clank::internal::enums {
 
 	template<typename T, typename V>
 	[[nodiscard]]
-	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator|(T lhs, V rhs) noexcept {
+	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, V>
+	operator|(V lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
 		return static_cast<T>(
 			lhs | static_cast<U>(rhs)
@@ -151,8 +151,8 @@ namespace clank::internal::enums {
 
 	template<typename T, typename V>
 	[[nodiscard]]
-	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator|=(T& lhs, T rhs) noexcept {
+	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, V>
+	operator|=(V& lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
 		return lhs = static_cast<T>(
 			lhs | static_cast<U>(rhs)
@@ -162,7 +162,7 @@ namespace clank::internal::enums {
 	template<typename T, typename V>
 	[[nodiscard]]
 	constexpr typename std::enable_if_t<std::is_integral_v<T> && std::is_enum_v<V>, T>
-	operator&(T lhs, T rhs) noexcept {
+	operator&(V lhs, T rhs) noexcept {
 		using U = typename std::underlying_type_t<V>;
 		return static_cast<T>(
 			lhs & static_cast<U>(rhs)
@@ -201,4 +201,4 @@ namespace clank::internal::enums {
 
 }
 
-#endif /* libclank_internal_enum_hh */
+#endif /* CLANK_INTERNAL_ENUM_HH */

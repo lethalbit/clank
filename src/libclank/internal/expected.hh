@@ -2,8 +2,8 @@
 /* internal/expected.hh - std::expected<T, E> impl */
 /* This header is based on Sy Brand's CC0 version of std::expected https://github.com/TartanLlama/expected */
 #pragma once
-#if !defined(libclank_internal_expected_hh)
-#define libclank_internal_expected_hh
+#if !defined(CLANK_INTERNAL_EXPECTED)
+#define CLANK_INTERNAL_EXPECTED
 
 #include <libclank/internal/defs.hh>
 
@@ -2339,4 +2339,4 @@ namespace clank::internal {
 }
 
 #endif
-#endif /* libclank_internal_expected_hh */
+#endif /* CLANK_INTERNAL_EXPECTED */

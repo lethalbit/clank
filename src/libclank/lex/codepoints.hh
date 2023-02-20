@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 #pragma once
-#if !defined(libclank_lex_unicode_ranges_hh)
-#define libclank_lex_unicode_ranges_hh
+#if !defined(CLANK_LEX_CODEPOINTS_HH)
+#define CLANK_LEX_CODEPOINTS_HH
 
 #include <cstdint>
 #include <array>
@@ -635,4 +635,4 @@ namespace clank::lex {
 	};
 }
 
-#endif /* libclank_lex_unicode_ranges_hh */
+#endif /* CLANK_LEX_CODEPOINTS_HH */

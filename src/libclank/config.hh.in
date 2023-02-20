@@ -2,8 +2,8 @@
 /* config.hh - Build-time configuration */
 @AUTOGEN_HEADER@
 #pragma once
-#if !defined(libclank_config_hh)
-#define libclank_config_hh
+#if !defined(CLANK_CONFIG_HH)
+#define CLANK_CONFIG_HH
 
 #include <cstdint>
 #include <string_view>
@@ -38,4 +38,4 @@ namespace libclank::config {
 	constexpr static auto bugreport_url{"@BUGREPORT_URL@"sv};
 }
 
-#endif /* libclank_config_hh */
+#endif /* CLANK_CONFIG_HH */

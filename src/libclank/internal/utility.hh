@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 #pragma once
-#if !defined(libclank_internal_utility_hh)
-#define libclank_internal_utility_hh
+#if !defined(CLANK_INTERNAL_UTILITY_HH)
+#define CLANK_INTERNAL_UTILITY_HH
 
 #include <cstdint>
 #include <cstddef>
@@ -23,4 +23,4 @@ namespace clank::internal {
 	}
 }
 
-#endif /* libclank_internal_utility_hh */
+#endif /* CLANK_INTERNAL_UTILITY_HH */

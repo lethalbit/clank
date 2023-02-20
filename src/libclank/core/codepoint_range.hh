@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 #pragma once
-#if !defined(libclank_internal_codepoint_range_hh)
-#define libclank_internal_codepoint_range_hh
+#if !defined(CLANK_CORE_CODEPOINT_RANGE_HH)
+#define CLANK_CORE_CODEPOINT_RANGE_HH
 
 #include <cstdint>
 
@@ -25,4 +25,4 @@ namespace clank::core {
 	};
 }
 
-#endif /* libclank_internal_codepoint_range_hh */
+#endif /* CLANK_CORE_CODEPOINT_RANGE_HH */

@@ -36,4 +36,10 @@ namespace clank {
 	expected<ast::Node, std::error_code> parse(const std::int32_t fd, const clank::core::LanguageStandard_t& lang) { // NOLINT(readability-identifier-length)
 		return {};
 	}
+
+	[[nodiscard]]
+	expected<ast::Node, std::error_code> parse(const void const* buffer, std::size_t len, const clank::core::LanguageStandard_t& lang) {
+		return {};
+	}
+
 }
